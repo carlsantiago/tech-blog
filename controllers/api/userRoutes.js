@@ -17,9 +17,9 @@ router.post('/', async (req,res) => {
 });
 
 router.post('/login', async (req,res) => {
+    console.log(req.body)
     try {
         const userData = await User.findONe({ where: { email: req.body.email } });
-
         if (!userData) {
             res
             .status(400)
@@ -43,6 +43,7 @@ router.post('/login', async (req,res) => {
             res.json({ user: userData, message: 'You are now logged in!' });
         });
     } catch (err) {
+
         res.status(400).json(err);
     }
 });
