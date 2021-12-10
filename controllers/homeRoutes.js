@@ -14,12 +14,22 @@ router.get('/', async (req,res) => {
     });
     
     const posts = postData.map((post) => post.get({ plain: true }));
+    // const userData = await User.findByPk(req.session.user_id)
+    // const user = userData.get({ plain: true });
 
-    res.render('homepage', { 
-      posts, 
-      logged_in: req.session.logged_in,
-      title: "Home",
-    });
+    //   res.render('homepage', { 
+    //     posts, 
+    //     logged_in: req.session.logged_in,
+    //     title: "Home",
+    //     username: user.name
+    //   });
+
+      res.render('homepage', { 
+        posts, 
+        logged_in: req.session.logged_in,
+        title: "Home",
+      });
+    
   } catch (err) {
     res.status(500).json(err);
   }
@@ -40,7 +50,8 @@ router.get('/post/:id', async (req,res) => {
     console.log(post)
     res.render('post', {
       ...post,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
+      title: "Post by " + post.user.name
     });
   } catch (err) {
     res.status(500).json(err);
@@ -55,10 +66,12 @@ router.get('/profile', withAuth, async (req,res) => {
     });
 
     const user = userData.get({ plain: true });
-
+    console.log(user.posts.length)
     res.render('profile', {
       ...user,
-      logged_in: true
+      logged_in: true,
+      title: "Dashboard",
+      username: user.name
     });
   } catch(err) {
     res.status(500).json(err);
