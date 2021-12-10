@@ -1,6 +1,6 @@
 <nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid d-flex justify-content-between w-100">
-    <a class="navbar-brand m-0" href="/">The Tech Blog</a>
+        <a class="navbar-brand m-0" href="/">The Tech Blog</a>
     {{#if logged_in}}
     <h2 class="text-light m-0 w-100 text-center ps-5 ms-5">Hello, {{username}}!</h2>
     {{/if}}
@@ -60,22 +60,29 @@
     </div>
 </div>
 
-  {{#if posts.length}}
-  <div class="col-md-6 post-list">
-    <h3>Current post:</h3>
 
-    {{#each posts as |post|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/post/{{post.id}}">{{post.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
-      </div>
+<div class="container mt-5 postContainer post-list">
+    {{#if posts.length}}
+    <div class="row row-cols-1">
+        {{#each posts as |post|}}
+        <div class="col align-self-center py-3 d-flex justify-content-center">
+            <div class="card w-50 text-white bg-secondary border-light">
+                <div class="card-header">
+                    <a class="link-light" href="/post/{{id}}">{{name}}</a>
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                     <p>{{description}}</p>
+                    </blockquote>
+                    <div class="d-flex justify-content-end">
+                      <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
     </div>
-    {{/each}}
-  </div>
-  {{/if}}
-
+</div>
+{{/if}}
 
 <script src="./js/profile.js"></script>

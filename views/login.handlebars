@@ -1,22 +1,22 @@
 {{> nav}}
 
 <div class="container pt-5">
-  <div class="row row-cols-2 d-flex justify-content-between">
+  <div class="row row-cols-1">
 
-    <div class="col">
-      <div class="card w-75 border-secondary">
-        <div class="card-header"><h1 class="m-0">Login</h1></div>
-        <div class="card-body">
+    <div class="col d-flex justify-content-center">
+      <div class="card border bg-secondary text-white w-25">
+        <div class="card-header border-white"><h1 class="m-0 text-center">Login</h1></div>
+        <div class="card-body d-flex justify-content-center">
           <form class="form login-form">
-            <div class="form-group">
-              <label for="email-login" class="col-sm-2 col-form-label">Email:</label>
-              <input class="form-input" type="text" id="email-login" />
+            <div class="form-group ">
+              <label for="email-login" class="col-sm-2 col-form-label formContainer">Email:</label>
+              <input class="form-input border-white bg-secondary text-white" type="text" id="email-login" />
             </div>
             <div class="form-group">
-              <label for="password-login" class="col-sm-2 col-form-label">Password:</label>
-              <input class="form-input" type="password" id="password-login" />
+              <label for="password-login" class="col-sm-2 col-form-label formContainer">Password:</label>
+              <input class="form-input border-white bg-secondary text-white" type="password" id="password-login" />
             </div>
-            <div class="form-group">
+            <div class="form-group d-flex justify-content-center mt-2">
               <button class="btn btn-primary" type="submit">Sign in</button>
             </div>
           </form>
@@ -24,31 +24,34 @@
       </div>
     </div>
 
-    <div class="col">
-      <div class="card w-75 border-secondary">
-        <div class="card-header"><h1 class="m-0">Sign Up</h1></div>
-        <div class="card-body">
+    <div class="col d-flex justify-content-center"><div id="divider"></div></div>
+    
+    <div class="col d-flex justify-content-center">
+      <div class="card w-25 border bg-secondary text-white">
+        <div class="card-header"><h1 class="m-0 text-center">Sign Up</h1></div>
+        <div class="card-body d-flex justify-content-center">
           <form class="form signup-form">
             <div class="form-group">
-              <label for="name-signup" class="col-sm-2 col-form-label">Name:</label>
-              <input class="form-input" type="text" id="name-signup" />
+              <label for="name-signup" class="col-sm-2 col-form-label formContainer">Name:</label>
+              <input class="form-input border-white bg-secondary text-white" type="text" id="name-signup" />
             </div>
             <div class="form-group">
-              <label for="email-signup" class="col-sm-2 col-form-label">Email:</label>
-              <input class="form-input" type="text" id="email-signup" />
+              <label for="email-signup" class="col-sm-2 col-form-label formContainer">Email:</label>
+              <input class="form-input border-white bg-secondary text-white" type="text" id="email-signup" />
             </div>
             <div class="form-group">
-              <label for="password-signup" class="col-sm-2 col-form-label">Password:</label>
-              <input class="form-input" type="password" id="password-signup" />
+              <label for="password-signup" class="col-sm-2 col-form-label formContainer">Password:</label>
+              <input class="form-input border-white bg-secondary text-white" type="password" id="password-signup" />
             </div>
-            <div class="form-group">
+            <div class="form-group d-flex justify-content-center mt-2">
               <button class="btn btn-primary" type="submit">Sign Up</button>
             </div>
           </form>
         </div>
       </div>
     </div>
-
   </div>
 </div>
+
+
 <script src="/js/login.js"></script>

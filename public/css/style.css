@@ -7,7 +7,13 @@ a {
   color: inherit;
 }
 
-.aContainer {
-  border-style: dashed;
-  border-color: white;
+.formContainer {
+  width: 5rem;
+}
+
+#divider {
+  width: 25rem;
+  background-color: white;
+  height: 5px;
+  margin: 2rem;
 }
