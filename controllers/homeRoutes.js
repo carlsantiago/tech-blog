@@ -12,13 +12,13 @@ router.get('/', async (req,res) => {
         }
       ]
     });
-
+    
     const posts = postData.map((post) => post.get({ plain: true }));
 
     res.render('homepage', { 
       posts, 
       logged_in: req.session.logged_in,
-      title: "Home"
+      title: "Home",
     });
   } catch (err) {
     res.status(500).json(err);
