@@ -44,7 +44,10 @@ router.get('/post/:id', async (req,res) => {
           attributes: ['name']
         },
         {
-          model: Comment
+          model: Comment,
+          // where: {
+          //   user_id: user_id
+          // }
         }
       ]
     });

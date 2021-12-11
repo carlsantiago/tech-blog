@@ -2,11 +2,12 @@ const newCommentHandler = async (event) => {
     event.preventDefault();
     console.log("NEW COMMENT")
     const description = document.querySelector('#commentDesc').value.trim();
+    const post_id = event.target.dataset.attr
 
     if (description) {
         const response = await fetch('/api/comment', {
             method: 'POST',
-            body: JSON.stringify({description}),
+            body: JSON.stringify({description, post_id}),
             headers: {
                 'Content-Type': 'application/json'
             }

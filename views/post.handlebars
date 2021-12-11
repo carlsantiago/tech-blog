@@ -19,11 +19,11 @@
         </div>
 
         <div class="col d-flex justify-content-center">
-            <form class="form form-floating w-75 new-comment">
+            <form data-attr="{{id}}" class="form form-floating w-75 new-comment">
                     <textarea class="form-control bg-secondary" placeholder="Leave a comment here" id="commentDesc"></textarea>
                     <label class="text-white" for="commentDesc">Comment</label>
                 <div class="col-12 d-flex justify-content-end mt-2">
-                    <button type="submit" class="btn btn-secondary">Submit</button>
+                    <button type="submit" value="{{id}}" class="btn btn-secondary">Submit</button>
                 </div>
             </form>
         </div>
@@ -36,6 +36,7 @@
             <div class="card-body">
                 <blockquote class="blockquote mb-0">
                     <p>{{comment.description}}</p>
+                    <footer class="blockquote-footer text-white m-0">{{user.name}} <cite title="Source Title">{{format_date date_created}}</cite></footer>
                 </blockquote>
             </div>
         </div>
