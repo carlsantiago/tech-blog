@@ -19,14 +19,30 @@
         </div>
 
         <div class="col d-flex justify-content-center">
-            <div class="form-floating w-75">
-                <textarea class="form-control bg-secondary" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-                <label class="text-white" for="floatingTextarea">Comment</label>
-                          <div class="col-12 d-flex justify-content-end mt-2">
-    <button type="submit" class="btn btn-secondary">Submit</button>
-  </div>
-            </div>
-
+            <form class="form form-floating w-75 new-comment">
+                    <textarea class="form-control bg-secondary" placeholder="Leave a comment here" id="commentDesc"></textarea>
+                    <label class="text-white" for="commentDesc">Comment</label>
+                <div class="col-12 d-flex justify-content-end mt-2">
+                    <button type="submit" class="btn btn-secondary">Submit</button>
+                </div>
+            </form>
         </div>
     </div>
+
+    {{#if comments.length}}
+    {{#each comments as |comment|}}
+    <div class="col d-flex justify-content-center">
+        <div class="card w-75 text-white bg-secondary border-light">
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>{{comment.description}}</p>
+                </blockquote>
+            </div>
+        </div>
+
+    </div>
+    {{/each}}
+    {{/if}}
 </div>
+
+<script src="/js/comment.js"></script>
