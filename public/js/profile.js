@@ -1,6 +1,6 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
-    console.log("YESSS")
+
     const name = document.querySelector('#postName').value.trim();
     const description = document.querySelector('#postDesc').value.trim();
   

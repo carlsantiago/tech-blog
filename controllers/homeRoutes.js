@@ -14,15 +14,6 @@ router.get('/', async (req,res) => {
     });
     
     const posts = postData.map((post) => post.get({ plain: true }));
-    // const userData = await User.findByPk(req.session.user_id)
-    // const user = userData.get({ plain: true });
-
-    //   res.render('homepage', { 
-    //     posts, 
-    //     logged_in: req.session.logged_in,
-    //     title: "Home",
-    //     username: user.name
-    //   });
 
       res.render('homepage', { 
         posts, 
@@ -45,15 +36,18 @@ router.get('/post/:id', async (req,res) => {
         },
         {
           model: Comment,
-          // where: {
-          //   user_id: user_id
-          // }
+          include: [
+            {
+              model: User,
+              attributes: ['name']
+            }
+          ]
         }
       ]
     });
 
     const post = postData.get({ plain: true });
-    console.log(post)
+
     res.render('post', {
       ...post,
       logged_in: req.session.logged_in,
@@ -72,7 +66,7 @@ router.get('/profile', withAuth, async (req,res) => {
     });
 
     const user = userData.get({ plain: true });
-    console.log(user.posts.length)
+
     res.render('profile', {
       ...user,
       logged_in: true,

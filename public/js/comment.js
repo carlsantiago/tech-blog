@@ -1,6 +1,6 @@
 const newCommentHandler = async (event) => {
     event.preventDefault();
-    console.log("NEW COMMENT")
+
     const description = document.querySelector('#commentDesc').value.trim();
     const post_id = event.target.dataset.attr
 

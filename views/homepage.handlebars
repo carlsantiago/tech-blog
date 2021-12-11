@@ -6,15 +6,11 @@
         <div class="col align-self-center py-3 d-flex justify-content-center">
             <div class="card w-75 text-white bg-secondary border-light">
                 <div class="card-header">
-                    <a class="link-light" href="/post/{{id}}">{{name}}</a>
+                    <a class="link-light" href="/post/{{id}}"><p class="h2">{{name}}</p></a>
+                    <p class="card-text"><small class="text-white">Posted by {{user.name}} <cite title="Source Title">{{format_date date_created}}</cite></small></p>
                 </div>
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                    <p>{{description}}</p>
-                    <div class="d-flex justify-content-end">
-                        <footer class="blockquote-footer text-white m-0">{{user.name}} <cite title="Source Title">{{format_date date_created}}</cite></footer>
-                    </div>
-                    </blockquote>
+                <div class="card-body">     
+                    <p class="h6">{{description}}</p>
                 </div>
             </div>
         </div>
